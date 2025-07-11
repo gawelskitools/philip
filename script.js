@@ -1,4 +1,5 @@
-// --- Flachwitze ---
+
+// Flachwitz-Logik
 const flachwitzeOriginal = [
   "Was ist rot und steht am Straßenrand? – Eine Hagenutte.",
   "Warum können Geister so schlecht lügen? – Weil man durch sie hindurchsieht.",
@@ -15,11 +16,11 @@ function getRandomFlachwitz() {
   return flachwitzPool.splice(index, 1)[0];
 }
 
-// --- Levelstruktur ---
+// Level-Definition
 const levels = [
   {
     title: "🚽 Level 1: Das sprechende Klo",
-    text: `Ein antikes Klo erhebt sich aus der Tiefe. Es spricht mit Wiener Dialekt:<br>
+    text: `Ein antikes Klo erhebt sich...
     "Wos bist'n du für a Lurch? Nur wer weiß, wie lange der durchschnittliche Furz dauert, darf passieren!"`,
     options: [
       { text: "1,2 Sekunden", correct: false },
@@ -30,7 +31,7 @@ const levels = [
   },
   {
     title: "🧌 Level 2: Der Troll vom Flachwitzberg",
-    text: `„Wer meine Brücke will betreten, muss 'nen schlechten Witz überleben!“<br>Was sagt ein Pirat beim Bäcker?`,
+    text: `Was sagt ein Pirat beim Bäcker?`,
     options: [
       { text: '"Ein Brot!"', correct: false },
       { text: '"Ich nehm das Krustenbrötchen, Ahoi!"', correct: false },
@@ -40,13 +41,13 @@ const levels = [
   },
   {
     title: "🧠 Level 3: G.A.K.A. – die geile Sprach-KI",
-    text: `Hallo, ich bin G.A.K.A., dein geistig degenerierter Assistent.<br>Welcher dieser Begriffe ist KEIN echter Porno-Titel?`,
+    text: `Welcher dieser Begriffe ist KEIN echter Porno-Titel?`,
     options: [
       { text: "Schlauchboot der Lust", correct: false },
       { text: "Mutti, die Wurst ist hart", correct: false },
       { text: "Schatten der Sahne – Das Fruchtjoghurtmassaker", correct: true }
     ],
-    letter: "N"
+    letter: "B"
   },
   {
     title: "🎡 Level 4: Glücksrad des Schicksals",
@@ -57,12 +58,18 @@ const levels = [
   },
   {
     title: "📚 Level 5: Das geheime Pornozimmer",
-    text: `Du öffnest einen muffigen Schrank. Darin: Ein zerfleddertes Heft namens „Motoröl und Möpse – Ausgabe 69“.<br>Auf der letzten Seite... ein Buchstabe!`,
+    text: `Du öffnest einen muffigen Schrank...`,
     options: [
       { text: "Seite 3 ansehen", correct: false },
       { text: "Heft rückwärts lesen", correct: false },
       { text: "Nach hinten blättern", correct: true }
     ],
+    letter: "N"
+  },
+  {
+    title: "🏁 Finale!",
+    text: "Du hast alles geschafft!",
+    options: [],
     letter: "E"
   }
 ];
@@ -70,7 +77,6 @@ const levels = [
 let currentLevel = 0;
 let collectedLetters = [];
 
-// --- Spielstart ---
 function startGame() {
   document.getElementById("intro").style.display = "none";
   showLevel(currentLevel);
@@ -88,7 +94,6 @@ function showLevel(index) {
 
   const text = document.createElement("p");
   text.innerHTML = level.text;
-
   container.appendChild(title);
   container.appendChild(text);
 
@@ -105,6 +110,12 @@ function showLevel(index) {
       btn.onclick = () => showFlachwitz(level.letter);
       container.appendChild(btn);
     }
+    return;
+  }
+
+  if (level.options.length === 0) {
+    collectedLetters.push(level.letter);
+    showPasswordInput();
     return;
   }
 
@@ -162,28 +173,25 @@ function nextLevel() {
   }
 }
 
+// NEU: Statt Eingabe – finale Buchstabenausgabe
 function showPasswordInput() {
-  document.getElementById("level-container").style.display = "none";
-  document.getElementById("final-password").style.display = "block";
-}
-
-function checkPassword() {
-  const input = document.getElementById("password-input").value.trim().toUpperCase();
-  const feedback = document.getElementById("password-feedback");
-  if (input === "MYBENZ") {
-    feedback.textContent = "✅ Korrekt! Das Tor öffnet sich!";
-    document.getElementById("final-password").style.display = "none";
-    document.getElementById("ending").style.display = "block";
-  } else {
-    feedback.textContent = "❌ Falsch! Versuch's nochmal. Du hast doch alle Buchstaben gesammelt!";
-  }
+  const container = document.getElementById("level-container");
+  container.style.display = "block";
+  container.innerHTML = `
+    <h2>🧠 Das letzte Rätsel</h2>
+    <p>Du hast folgende Buchstaben gesammelt:</p>
+    <div style="font-size: 2em; margin: 10px 0; letter-spacing: 10px;">
+      ${collectedLetters.join(" - ")}
+    </div>
+    <p><em>Kannst du die Box der Pandora mit dem richtigen Code-Wort öffnen?</em></p>
+    <p style="font-size:0.9em; color:gray;">(Denk nach. Die Lösung ist 6-stellig... und du hast alles in der Hand!)</p>
+  `;
 }
 
 // --- Glücksrad-Spiel ---
 let currentSpin = 0;
 let totalLoss = 0;
 let wheelInterval;
-
 const wheelValues = ["+5", "-10", "+10", "-5", "+5", "-10", "+10", "-5"];
 
 function startGlücksradSpiel() {
