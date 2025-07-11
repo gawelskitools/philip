@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Philip und das Königreich der Klobürsten</title>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="game-container">
+    <h1>👑 Philip und das Königreich der Klobürsten</h1>
+    <div id="intro">
+      <p>
+        Du bist 18 geworden. Zeit, dich wie ein echter Mann zu beweisen: mit Furzlogik, Biergeschick
+        und dem Mut, ein sprechendes Klo zu küssen. Bist du bereit für die Prüfung der Peinlichkeit?
+      </p>
+      <button onclick="startGame()">JA, ICH BIN BEREIT!</button>
+    </div>
+
+    <div id="level-container" style="display: none;"></div>
+
+    <div id="final-password" style="display: none;">
+      <h2>🚪 Das Tor zur BENZinkammer</h2>
+      <p>Du hast alle Buchstaben gefunden. Doch kannst du das Passwort zusammensetzen?</p>
+      <input type="text" id="password-input" placeholder="Passwort hier eingeben...">
+      <button onclick="checkPassword()">Tor öffnen</button>
+      <p id="password-feedback"></p>
+    </div>
+
+    <div id="ending" style="display: none;">
+      <h2>🎉 Herzlichen Glückwunsch!</h2>
+      <p>Du hast die Prüfung bestanden. Willkommen im Club der Klobürstenritter!</p>
+      <p>Genieß dein erstes legales Bier mit Stil – und vielleicht einer Kloparty.</p>
+    </div>
+  </div>
+  <canvas id="biercanvas" width="300" height="400" style="display:none; background: #222; border: 2px solid #ffde59;"></canvas>
+  <div id="bier-controls" style="display:none; text-align:center; margin-top:10px;">
+    <button onclick="moveBecherLeft()">⬅️</button>
+    <button onclick="moveBecherRight()">➡️</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
