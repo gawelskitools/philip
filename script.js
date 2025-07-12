@@ -180,7 +180,7 @@ function showPasswordInput() {
     <div style="font-size: 2em; margin: 10px 0; letter-spacing: 10px;">
       ${collectedLetters.join(" - ")}
     </div>
-    <p><em>Kannst du die Box der Pandora mit dem richtigen Code-Wort öffnen?</em></p>
+    <p><em>🔒 Nur wer klug kombiniert, öffnet die geheimnissvolle Box und fährt künftig Mercedes!</em></p>
     <p style="font-size:0.9em; color:gray;">(Denk nach. Die Lösung ist 6-stellig... und du hast alles in der Hand!)</p>
   `;
 }
@@ -200,7 +200,7 @@ function startGlücksradSpiel() {
   const container = document.getElementById("level-container");
   container.innerHTML = `
     <h2>🎡 Das Glücksspiel</h2>
-    <p>Du darfst einmal drücken und das Spiel 10× drehen. Gewinne Geld oder verliere Verstand...</p>
+    <p>Du darfst einmal drücken und gewinnst Geld oder verlierst den Verstand...</p>
     <div id="rad-resultat" style="font-size:2em;margin:20px 0;">Bereit zum Drehen!</div>
     <button id="rad-start-btn">Start</button>
     <p id="verlust-anzeige"></p>
@@ -257,7 +257,7 @@ function dreheRad() {
   let drehs = 0;
 
   wheelInterval = setInterval(() => {
-    resultDiv.textContent = "🎲 " + dummyValues[position];
+    resultDiv.textContent = "🎰 " + dummyValues[position];
     position = (position + 1) % dummyValues.length;
     drehs++;
 
@@ -283,7 +283,7 @@ function zeigeRadErgebnis() {
   container.innerHTML = `
     <h2>💀 Ende vom Rad</h2>
     <p>Gesamtverlust: <strong>${Math.abs(totalLoss)} €</strong></p>
-    <p>Übergebe nun leider ${Math.abs(totalLoss)} Euro für einen guten Zweck – einfach deinem Onkel zum Versaufen überlassen.</p>
+    <p>Übergebe nun leider ${Math.abs(totalLoss)} Euro für einen guten Zweck<br> ➡️an deinen Onkel für seine nächste Kneipentour.</p>
     <button onclick="zeigeTrostpreis()">Trostpreis anzeigen</button>
   `;
 }
