@@ -1,7 +1,7 @@
 // Flachwitz-Logik
 const flachwitzeOriginal = [
   "Was macht ein Mercedesfahrer nach dem Sex? <br>Er klappt den Rückspiegel runter und sagt: Danke, geiler Typ",
-  "Frage an Siri: „Wieso bin ich schon so lange Single? <br>...Siri aktiviert die Frontkamera.",
+  "Frage an Siri: Wieso bin ich schon so lange Single? <br>...Siri aktiviert die Frontkamera.",
   "Meine Freundin sollte über ihre eigenen Fehler nachdenken. <br>Jetzt steht sie seit Stunden vor dem Spiegel.",
   "Arzt: Übergewicht ist nicht gut für die Gesundheit, sie sind eindeutig viel zu dick. <br> Patient: Ich würde gerne noch eine zweite Meinung hören. <br>Arzt: Sie sind außerdem hässlich.",
   "Was ist gemein? <br> Einem Blinden eine Kinokarte zu schenken. <br>Und was ist fies? <br>Wenn es ein Stummfilm ist…",  
@@ -190,7 +190,7 @@ let currentSpin = 0;
 let totalLoss = 0;
 let wheelInterval;
 let drehErgebnisse = [
-  +10, -10, +20, -50, +15, -20, +5, -10, -50, -90
+  +50, -10, +100, -50, +10, -50, +200, -20, -50, -360
 ];
 let drehKommentare = [
   "🎉 Gleich ein Gewinn! Das fängt gut an.",
@@ -211,7 +211,7 @@ function startGlücksradSpiel() {
   const container = document.getElementById("level-container");
   container.innerHTML = `
     <h2>🎡 Das Glücksspiel</h2>
-    <p>Du darfst einmal drücken, um das Rad 10× zu drehen.<br>Viel Glück... du wirst es brauchen.</p>
+    <p>Du darfst einmal drücken, um das Rad 10× zu drehen.<br>Viel Glück...</p>
     <div id="rad-resultat" class="rad-display">Bereit zum Drehen!</div>
     <div id="rad-kommentar" class="rad-comment"></div>
     <button id="rad-start-btn">Start</button>
