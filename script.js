@@ -1,11 +1,11 @@
 // Flachwitz-Logik
 const flachwitzeOriginal = [
-  "Was macht ein Mercedesfahrer nach dem Sex? Er klappt den Rückspiegel runter und sagt: „Danke, geiler Typ",
-  "Frage an Siri: „Wieso bin ich schon so lange Single? — Siri aktiviert die Frontkamera.",
-  "Ich hab meiner Freundin gesagt, sie soll mal über ihre Fehler nachdenken. Jetzt steht sie seit ’ner Stunde vor dem Spiegel.",
-  "Arzt: „Übergewicht ist nicht gut für die Gesundheit, sie sind eindeutig viel zu dick. — Patient: Ich würde gerne noch eine zweite Meinung hören. — Arzt: Sie sind außerdem hässlich.",
-  "Was ist gemein? Einem Blinden eine Kinokarte zu schenken. Und was ist fies? Wenn es ein Stummfilm ist…",  
-  "Wie nennt man einen intelligenten Toilettenbesucher? – klugscheißer."
+  "Was macht ein Mercedesfahrer nach dem Sex? <br>Er klappt den Rückspiegel runter und sagt: Danke, geiler Typ",
+  "Frage an Siri: „Wieso bin ich schon so lange Single? <br>...Siri aktiviert die Frontkamera.",
+  "Zur Freundin habe ich gesagt, sie soll mal über ihre Fehler nachdenken. <br>Jetzt steht sie seit Stunden vor dem Spiegel.",
+  "Arzt: Übergewicht ist nicht gut für die Gesundheit, sie sind eindeutig viel zu dick. <br> Patient: Ich würde gerne noch eine zweite Meinung hören. <br>Arzt: Sie sind außerdem hässlich.",
+  "Was ist gemein? <br> Einem Blinden eine Kinokarte zu schenken. <br>Und was ist fies? <br>Wenn es ein Stummfilm ist…",  
+  "Wie nennt man einen intelligenten Toilettenbesucher? <br>Klugscheißer."
 ];
 
 let flachwitzPool = [...flachwitzeOriginal];
@@ -153,7 +153,7 @@ function showFlachwitz(letter) {
 
   const witz = getRandomFlachwitz();
   const jokeText = document.createElement("p");
-  jokeText.innerHTML = `🤣 Flachwitz-Zwischenstopp 🤣<br><br><em>${witz}</em>`;
+  jokeText.innerHTML = `🤣 Flachwitz-Zwischenstopp 🤣<br><br><span style="font-weight: bold; color: #ffde59;">${witz}</span>`;
   container.appendChild(jokeText);
 
   const btn = document.createElement("button");
@@ -181,27 +181,39 @@ function showPasswordInput() {
       ${collectedLetters.join(" - ")}
     </div>
     <p><em>🔒 Nur wer klug kombiniert, öffnet die geheimnissvolle Box und fährt künftig Mercedes!</em></p>
-    <p style="font-size:0.9em; color:gray;">(Denk nach. Die Lösung ist 6-stellig... und du hast alles in der Hand!)</p>
+    <p style="font-size:0.9em; color:gray;">(Denk nach. Die Lösung ist 6-stellig...🚗)</p>
   `;
 }
 
-// --- Glücksrad-Spiel (gesteuerter Verlust: exakt -180 € nach 10 Drehs) ---
+// --- Glücksrad-Spiel (mit Leucht-Effekt und Kommentar) ---
 let currentSpin = 0;
 let totalLoss = 0;
 let wheelInterval;
-let drehErgebnisse = [];
-const anzahlDrehs = 10;
-const zielVerlust = -180;
+let drehErgebnisse = [
+  +10, -10, +20, -50, +15, -20, +5, -10, -50, -90
+];
+let drehKommentare = [
+  "🎉 Gleich ein Gewinn! Das fängt gut an.",
+  "😬 Kleiner Dämpfer...",
+  "💰 Hoffnungsschimmer!",
+  "💥 Autsch! Das hat wehgetan...",
+  "✨ Immerhin etwas...",
+  "📉 Die Kurve geht runter...",
+  "🤞 Vielleicht war’s das letzte Glück?",
+  "🫠 Es wird düster...",
+  "💸 Das tut weh!",
+  "☠️ Finale Pleite – besser wird’s nicht..."
+];
 
-const erlaubteWerte = [-50, -20, -10, -5, +5, +10, +15, +20];
 const dummyValues = ["+10", "-20", "+5", "-50", "+15", "-10", "+20", "-5"];
 
 function startGlücksradSpiel() {
   const container = document.getElementById("level-container");
   container.innerHTML = `
     <h2>🎡 Das Glücksspiel</h2>
-    <p>Du darfst einmal drücken und gewinnst Geld oder verlierst den Verstand...</p>
-    <div id="rad-resultat" style="font-size:2em;margin:20px 0;">Bereit zum Drehen!</div>
+    <p>Du darfst einmal drücken, um das Rad 10× zu drehen.<br>Viel Glück... du wirst es brauchen.</p>
+    <div id="rad-resultat" class="rad-display">Bereit zum Drehen!</div>
+    <div id="rad-kommentar" class="rad-comment"></div>
     <button id="rad-start-btn">Start</button>
     <p id="verlust-anzeige"></p>
   `;
@@ -209,41 +221,9 @@ function startGlücksradSpiel() {
   document.getElementById("rad-start-btn").onclick = () => {
     currentSpin = 0;
     totalLoss = 0;
-    drehErgebnisse = generiereErgebnisse(zielVerlust, anzahlDrehs);
     document.getElementById("rad-start-btn").disabled = true;
     dreheRad();
   };
-}
-
-function generiereErgebnisse(zielVerlust, anzahl) {
-  let versuche = 0;
-
-  while (versuche < 10000) {
-    const ergebnisse = [];
-    let summe = 0;
-
-    for (let i = 0; i < anzahl - 1; i++) {
-      const wert = erlaubteWerte[Math.floor(Math.random() * erlaubteWerte.length)];
-      ergebnisse.push(wert);
-      summe += wert;
-    }
-
-    const letzterWert = zielVerlust - summe;
-
-    if (erlaubteWerte.includes(letzterWert)) {
-      ergebnisse.push(letzterWert);
-      return shuffle(ergebnisse);
-    }
-
-    versuche++;
-  }
-
-  console.error("Keine gültige Ergebnis-Kombination gefunden!");
-  return Array(anzahl).fill(Math.floor(zielVerlust / anzahl));
-}
-
-function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
 }
 
 function dreheRad() {
@@ -253,11 +233,13 @@ function dreheRad() {
   }
 
   const resultDiv = document.getElementById("rad-resultat");
+  const commentDiv = document.getElementById("rad-kommentar");
   let position = 0;
   let drehs = 0;
 
   wheelInterval = setInterval(() => {
     resultDiv.textContent = "🎰 " + dummyValues[position];
+    resultDiv.className = "rad-display";
     position = (position + 1) % dummyValues.length;
     drehs++;
 
@@ -267,13 +249,17 @@ function dreheRad() {
       totalLoss += wert;
 
       const symbol = wert >= 0 ? "💰 +" : "💸 -";
+      const farbklasse = wert >= 0 ? "gewinn-blink" : "verlust-blink";
+
       resultDiv.textContent = symbol + Math.abs(wert) + " €";
+      resultDiv.classList.add(farbklasse);
+      commentDiv.textContent = drehKommentare[currentSpin];
 
       document.getElementById("verlust-anzeige").textContent =
         "Zwischenstand: " + totalLoss + " €";
 
       currentSpin++;
-      setTimeout(dreheRad, 1200);
+      setTimeout(dreheRad, 1600);
     }
   }, 100);
 }
@@ -283,7 +269,7 @@ function zeigeRadErgebnis() {
   container.innerHTML = `
     <h2>💀 Ende vom Rad</h2>
     <p>Gesamtverlust: <strong>${Math.abs(totalLoss)} €</strong></p>
-    <p>Übergebe nun leider ${Math.abs(totalLoss)} Euro für einen guten Zweck<br> ➡️an deinen Onkel für seine nächste Kneipentour.</p>
+    <p>Du hast es geschafft, nichts zu gewinnen!<br>➡️ Gib zur Strafe ${Math.abs(totalLoss)} Euro deinem Onkel für seinen nächsten Kneipenabend.</p>
     <button onclick="zeigeTrostpreis()">Trostpreis anzeigen</button>
   `;
 }
