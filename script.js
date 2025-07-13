@@ -32,7 +32,7 @@ const levels = [
     text: `Woran erkennt man seine erste große Liebe?`,
     options: [
       { text: '"Wenn sie deinen Namen beim Stöhnen vergisst!"', correct: false },
-      { text: '"Wenn sie dir ihr Passwort gibt – aber nie ihren BH."', correct: false },
+      { text: '"Wenn sie dir ihr Handy-Passwort gibt – aber nie ihren BH."', correct: false },
       { text: '"Wenn du trotz Erektion noch an sie denkst."', correct: true }
     ],
     letter: "M"
@@ -60,7 +60,7 @@ const levels = [
     options: [
       { text: "Lust auf Landfrauen – Folge 69", correct: false },
       { text: "Stullen & Stuten – der doppelte Genuss", correct: false },
-      { text: "Pfui, Philip!", correct: true }
+      { text: "Pfui, Philip! Gruß, Mama", correct: true }
     ],
     letter: "N"
   },
