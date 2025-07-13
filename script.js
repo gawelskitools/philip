@@ -2,7 +2,7 @@
 const flachwitzeOriginal = [
   "Was macht ein Mercedesfahrer nach dem Sex? <br>Er klappt den Rückspiegel runter und sagt: Danke, geiler Typ",
   "Frage an Siri: „Wieso bin ich schon so lange Single? <br>...Siri aktiviert die Frontkamera.",
-  "Zur Freundin habe ich gesagt, sie soll mal über ihre Fehler nachdenken. <br>Jetzt steht sie seit Stunden vor dem Spiegel.",
+  "Meine Freundin sollte über ihre eigenen Fehler nachdenken. <br>Jetzt steht sie seit Stunden vor dem Spiegel.",
   "Arzt: Übergewicht ist nicht gut für die Gesundheit, sie sind eindeutig viel zu dick. <br> Patient: Ich würde gerne noch eine zweite Meinung hören. <br>Arzt: Sie sind außerdem hässlich.",
   "Was ist gemein? <br> Einem Blinden eine Kinokarte zu schenken. <br>Und was ist fies? <br>Wenn es ein Stummfilm ist…",  
   "Wie nennt man einen intelligenten Toilettenbesucher? <br>Klugscheißer."
@@ -175,13 +175,13 @@ function showPasswordInput() {
   const container = document.getElementById("level-container");
   container.style.display = "block";
   container.innerHTML = `
-    <h2>🧠 Das letzte Rätsel</h2>
+    <h2>❓❓❓ Der Cryptex-Code ❓❓❓</h2>
     <p>Du hast folgende Buchstaben gesammelt:</p>
     <div style="font-size: 2em; margin: 10px 0; letter-spacing: 10px;">
       ${collectedLetters.join(" - ")}
     </div>
-    <p><em>🔒 Nur wer klug kombiniert, öffnet die geheimnissvolle Box und fährt künftig Mercedes!</em></p>
-    <p style="font-size:0.9em; color:gray;">(Denk nach. Die Lösung ist 6-stellig...🚗)</p>
+    <p>🔒 Nur wenn du klug kombinierst, löst du den Cryptex-Code und fährst künftig Mercedes!</p>
+    <p style="font-size:1.2em; color:gray;">(Denk nach. Die Lösung ist 6-stellig...oder fahre weiterhin 🚲)</p>
   `;
 }
 
