@@ -3,7 +3,7 @@ const flachwitzeOriginal = [
   "Was macht ein Mercedesfahrer nach dem Sex? <br>Er klappt den Rückspiegel runter und sagt:<br> Danke, geiler Typ",
   "Frage an Siri: Wieso bin ich schon so lange Single? <br>...Siri aktiviert die Frontkamera.",
   "Meine Freundin sollte über ihre eigenen Fehler nachdenken. <br>Jetzt steht sie seit Stunden vor dem Spiegel.",
-  "Arzt: Übergewicht ist nicht gut für die Gesundheit, sie sind eindeutig viel zu dick. <br> Patient: Ich würde gerne noch eine zweite Meinung hören. <br>Arzt: Sie sind außerdem hässlich.",
+  "Arzt: Sie sind eindeutig viel zu dick. <br> Patient: Ich würde gerne noch eine zweite Meinung hören. <br>Arzt: Sie sind außerdem hässlich.",
   "Was ist gemein? <br> Einem Blinden eine Kinokarte zu schenken. <br>Und was ist fies? <br>Wenn es ein Stummfilm ist…",  
   "Wie nennt man einen intelligenten Toilettenbesucher? <br>Klugscheißer."
 ];
@@ -181,7 +181,7 @@ function showPasswordInput() {
       ${collectedLetters.join(" - ")}
     </div>
     <p>🔒 Nur wenn du klug kombinierst, löst du den Cryptex-Code und fährst künftig Mercedes!</p>
-    <p style="font-size:1.2em; color:gray;">(Denk nach. Die Lösung ist 6-stellig...oder fahre weiterhin <br><span style="font-size: 48px;">🚲</span></p>
+    <p style="font-size:1.2em; color:gray;">(Denk nach. Die Lösung ist 6-stellig...oder fahre weiterhin <br><span style="font-size: 80px;">🚲</span></p>
   `;
 }
 
