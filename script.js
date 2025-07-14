@@ -22,7 +22,7 @@ const levels = [
     text: `Zwischen Sitzpolster und Schallwelle:<br> Wie viel Zeit gönnt sich ein ehrlicher Furz?`,
     options: [
       { text: "Zwischen Pffft und Was war das?! – 1,8 Sekunden.", correct: false },
-      { text: "Kurz genug zum Leugnen, – sonst wird’s nicht mehr Furz, sondern Beichte.", correct: true },
+      { text: "Kurz genug zum Leugnen – sonst wird’s nicht mehr Furz, sondern Beichte.", correct: true },
       { text: "5 Sekunden, je nach Menge an Bier & Currywurst", correct: false }
     ],
     letter: "Z"
