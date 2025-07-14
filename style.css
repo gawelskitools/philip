@@ -13,8 +13,8 @@ h1, h2 {
   color: #ffde59;
   font-family: 'Open Sans', sans-serif;
   text-shadow:
-    0 0 3px #ffde59,
-    0 0 4px #ffde59,
+    0 0 1px #ffde59,
+    0 0 2px #ffde59,
     1px 1px 0 #000;
 }
 
