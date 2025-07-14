@@ -3,7 +3,7 @@ const flachwitzeOriginal = [
   "Was sagt der Fuchs morgens im Hühnerstall?<br> Jetzt aber raus aus den Federn...",
   "Die Polizei stoppt einen Vampir auf einem Tandem<br> Polizei: Haben Sie etwas getrunken?<br>Vampir: Ja, zwei Radler...",
   "Mit dem Bizeps anzugeben ist echt ober-arm...",
-  "Meine Freundin steht auf Doktorspiele!<br> Sie sitz jetzt seit zwei Stunden auf dem Flur und wartet...",
+  "Meine Freundin steht auf Doktorspiele!<br> Sie sitzt jetzt seit zwei Stunden auf dem Flur und wartet...",
   "Was ist gemein? <br> Einem Blinden eine Kinokarte zu schenken. <br>Und was ist fies? <br>Wenn es ein Stummfilm ist…",  
   "Liebe ist wie Durchfall...<br>...kommt plötzlich, geht schmerzhaft, hinterlässt Spuren..."
 ];
