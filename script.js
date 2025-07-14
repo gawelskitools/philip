@@ -141,7 +141,7 @@ function handleAnswer(correct, letter) {
     btn.onclick = () => showFlachwitz(letter);
     container.appendChild(btn);
   } else {
-    feedback.textContent = "🤦 FALSCH! Deine Gehirnzellen feiern wohl schon – ohne dich.🤦";
+    feedback.textContent = "🤦 Leider nein. <br>Aber sympathisch, wie du dich tapfer am Rande der Peinlichkeit bewegst...🤦";
     feedback.className = "wrong";
     container.appendChild(feedback);
   }
