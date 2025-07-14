@@ -22,7 +22,7 @@ const levels = [
     text: `Zwischen Sitzpolster und Schallwelle:<br> Wie viel Zeit gönnt sich ein ehrlicher Furz?`,
     options: [
       { text: "Zwischen Pffft und Was war das?! – 1,8 Sekunden.", correct: false },
-      { text: "Kurz genug zum Leugnen, lang genug fürs Sofa-Trauma.", correct: true },
+      { text: "Kurz genug zum Leugnen, – sonst wird’s nicht mehr Furz, sondern Beichte.", correct: true },
       { text: "5 Sekunden, je nach Menge an Bier & Currywurst", correct: false }
     ],
     letter: "Z"
@@ -32,7 +32,7 @@ const levels = [
     text: `Woran erkennt man seine erste große Liebe?`,
     options: [
       { text: '"Wenn sie deinen Namen beim Stöhnen vergisst!"', correct: false },
-      { text: '"Wenn sie dir ihr Handy-Passwort gibt – aber nie ihren BH."', correct: false },
+      { text: '"Wenn du ihre Furze süß findest. Bis sie beim Sex ausrutscht."', correct: false },
       { text: '"Wenn du trotz Erektion noch an sie denkst."', correct: true }
     ],
     letter: "M"
@@ -41,9 +41,9 @@ const levels = [
     title: "🖕🏻 Level 3: Filmabend mit Ficktion",
     text: `Welcher dieser Begriffe ist KEIN echter Porno-Titel?`,
     options: [
-      { text: "Herr der Ringe – Die Zwei Löcher", correct: false },
-      { text: "Mutti, die Wurst ist hart", correct: false },
-      { text: "Täglich poppt das Murmeltier", correct: true }
+      { text: "Dornmöschen", correct: false },
+      { text: "Black Cock Down", correct: false },
+      { text: "Stoß langsam I-III", correct: true }
     ],
     letter: "B"
   },
@@ -58,8 +58,8 @@ const levels = [
     title: "📚 Level 5: Der geheime Porno im Kinderzimmer",
     text: `Was stand auf dem Cover deines ersten Pornos?`,
     options: [
-      { text: "Lust auf Landfrauen – Folge 69", correct: false },
-      { text: "Stullen & Stuten – der doppelte Genuss", correct: false },
+      { text: "Tight Club", correct: false },
+      { text: "Meike mag das Würstchen", correct: false },
       { text: "Pfui, Philip! Gruß, Mama", correct: true }
     ],
     letter: "N"
