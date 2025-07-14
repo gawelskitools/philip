@@ -1,11 +1,11 @@
 // Flachwitz-Logik
 const flachwitzeOriginal = [
-  "Was macht ein Mercedesfahrer nach dem Sex? <br>Er klappt den Rückspiegel runter und sagt:<br> Danke, geiler Typ",
-  "Frage an Siri: Wieso bin ich eigentlich Single? <br>...Siri aktiviert die Frontkamera.",
-  "Meine Freundin sollte über ihre eigenen Fehler nachdenken. <br>Jetzt steht sie seit Stunden vor dem Spiegel.",
-  "Arzt: Sie sind eindeutig viel zu dick. <br> Patient: Ich würde gerne noch eine zweite Meinung hören. <br>Arzt: Sie sind außerdem hässlich.",
+  "Was sagt der Fuchs morgens im Hühnerstall?<br> Jetzt aber raus aus den Federn...",
+  "Die Polizei stoppt einen Vampir auf einem Tandem<br> Polizei: Haben Sie etwas getrunken?<br>Vampir: Ja, zwei Radler...",
+  "Mit dem Bizeps anzugeben ist echt ober-arm...",
+  "Meine Freundin steht auf Doktorspiele!<br> Sie sitz jetzt seit zwei Stunden auf dem Flur und wartet...",
   "Was ist gemein? <br> Einem Blinden eine Kinokarte zu schenken. <br>Und was ist fies? <br>Wenn es ein Stummfilm ist…",  
-  "Wie nennt man einen intelligenten Toilettenbesucher? <br>Klugscheißer."
+  "Liebe ist wie Durchfall...<br>...kommt plötzlich, geht schmerzhaft, hinterlässt Spuren..."
 ];
 
 let flachwitzPool = [...flachwitzeOriginal];
